@@ -4,7 +4,7 @@ namespace ApiCep\Controller;
 
 abstract class Controller
 {
-    protected static function getResponseAsJSON($data)
+    public static function getResponseAsJSON($data)
     {
         header("Access-Control-Allow-Origin: *");
         header("Content-Type: application/json; charset=utf-8");
