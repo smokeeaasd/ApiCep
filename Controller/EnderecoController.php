@@ -16,13 +16,20 @@ final class EnderecoController extends Controller
     {
         
     }
+
     public static function getLogradouroByCep() : void
     {
 
     }
+
     public static function getCidadesByUf() : void
     {
 
+    }
+
+    public static function getBairrosByIdCidade() : void
+    {
+        
     }
 }
 
