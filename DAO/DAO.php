@@ -27,7 +27,7 @@ abstract class DAO extends PDO
         }
         catch (PDOException $e)
         {
-            throw new Exception("Ocorreu um erro ao tentar conectar do banco de dados.");
+            throw new Exception("Ocorreu um erro ao tentar conectar ao MySQL", 0, $e);
         }
     }
 }
