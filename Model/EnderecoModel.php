@@ -2,7 +2,7 @@
 
 namespace ApiCep\Model;
 
-class EnderecoModel
+class EnderecoModel extends Model
 {
     
 }
