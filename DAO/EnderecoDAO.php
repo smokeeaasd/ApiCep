@@ -21,6 +21,17 @@ class EnderecoDAO extends DAO
 
         return $endereco_obj;
     }
+
+    public function selectLogradouroByBairroAndCidade(string $bairro, int $id_cidade)
+    {
+        $sql = "SELECT * FROM logradouro WHERE descricao_bairro = ? AND id_cidade = ?";
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $bairro);
+        $stmt->bindValue(2, $id_cidade);
+
+        return $stmt->fetchAll(PDO::FETCH_CLASS);
+    }
 }
 
 ?>
