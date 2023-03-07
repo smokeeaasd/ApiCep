@@ -7,6 +7,18 @@ class EnderecoDAO extends DAO
         parent::__construct();
     }
 
+    public function selectCidadesByUf($uf)
+    {
+        $sql = "SELECT * FROM Cidades WHERE uf = ? ORDER BY descricao";
+
+        $stmt = $this->conexao->prepare($sql);
+
+        $stmt->bindValue(1, $uf);
+        $stmt->execute();
+
+        return $stmt->fetchAll(DAO::FETCH_CLASS);
+    }
+
     public function selectByCep(int $cep)
     {
         $sql = "SELECT * FROM logradouro WHERE cep = ?";
@@ -29,8 +41,9 @@ class EnderecoDAO extends DAO
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $bairro);
         $stmt->bindValue(2, $id_cidade);
+        $stmt->execute();
 
-        return $stmt->fetchAll(PDO::FETCH_CLASS);
+        return $stmt->fetchAll(DAO::FETCH_CLASS);
     }
 }
 
