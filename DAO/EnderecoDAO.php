@@ -71,5 +71,3 @@ class EnderecoDAO extends DAO
         return $stmt->fetchAll(DAO::FETCH_CLASS);
     }
 }
-
-?>
