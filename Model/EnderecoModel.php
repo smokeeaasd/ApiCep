@@ -21,7 +21,7 @@ class EnderecoModel extends Model
             $this->rows = $dao->selectLogradouroByBairroAndCidade($bairro, $id_cidade);
         } catch (Exception $ex)
         {
-            exit("Erro encontrado: " . $ex->getMessage());
+            throw $ex;
         }
     }
 }
