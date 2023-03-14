@@ -19,9 +19,23 @@ class EnderecoModel extends Model
             $dao = new EnderecoDAO();
 
             $this->rows = $dao->selectLogradouroByBairroAndCidade($bairro, $id_cidade);
-        } catch (Exception $ex)
+        } catch (Exception $e)
         {
-            throw $ex;
+            throw $e;
+        }
+    }
+
+    public function getCepByLogradouro($logradouro)
+    {
+        try
+        {
+            $dao = new EnderecoDAO();
+
+            $this->rows = $dao->selectCepByLogradouro($logradouro);
+        }
+        catch (Exception $e)
+        {
+            echo $e->getMessage();
         }
     }
 }
