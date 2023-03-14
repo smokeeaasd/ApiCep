@@ -16,8 +16,8 @@ final class EnderecoController extends Controller
 
             $model = new EnderecoModel();
             $model->getCepByLogradouro($logradouro);
-
             parent::getResponseAsJSON($model->rows);
+
         } catch (Exception $e) {
             parent::getExceptionAsJSON($e);
         }
