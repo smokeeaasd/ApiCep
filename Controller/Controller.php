@@ -53,7 +53,7 @@ abstract class Controller
            throw new Exception("O método de requisição deve ser GET");
     }
 
-    public static function getIntFromUrl($var_get, $var_name = null)
+    protected static function getIntFromUrl($var_get, $var_name = null)
     {
         self::isGet();
 
@@ -63,7 +63,7 @@ abstract class Controller
             throw new Exception("Variável $var_name não identificada");
     }
 
-    public static function getStringFromUrl($var_get, $var_name = null)
+    protected static function getStringFromUrl($var_get, $var_name = null)
     {
         self::isGet();
 
