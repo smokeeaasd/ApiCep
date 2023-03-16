@@ -52,5 +52,25 @@ abstract class Controller
         if ($_SERVER['REQUEST_METHOD'] !== 'POST')
            throw new Exception("O método de requisição deve ser GET");
     }
+
+    public static function getIntFromUrl($var_get, $var_name = null)
+    {
+        self::isGet();
+
+        if (!empty($var_get))
+            return (int)$var_get;
+        else
+            throw new Exception("Variável $var_name não identificada");
+    }
+
+    public static function getStringFromUrl($var_get, $var_name = null)
+    {
+        self::isGet();
+
+        if (!empty($var_get))
+            return (string)$var_get;
+        else
+            throw new Exception("Variável $var_name não identificada");
+    }
 }
 ?>
