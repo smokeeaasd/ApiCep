@@ -38,8 +38,19 @@ abstract class Controller
         http_response_code(400);
 
         exit(json_encode($exception));
-        
+
+    }
+
+    public static function isGet()
+    {
+        if ($_SERVER['REQUEST_METHOD'] !== 'GET')
+            throw new Exception("O método de requisição deve ser GET");   
+    }
+
+    public static function isPost()
+    {
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST')
+           throw new Exception("O método de requisição deve ser GET");
     }
 }
-
 ?>
