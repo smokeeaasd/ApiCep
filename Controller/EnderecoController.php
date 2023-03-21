@@ -49,7 +49,20 @@ final class EnderecoController extends Controller
 
     public static function getLogradouroByCep() : void
     {
+        try
+        {
+            $cep = parent::getIntFromUrl(
+                isset($_GET['cep']) ? $_GET['cep'] : null
+            );
 
+            $model = new EnderecoModel();
+
+            parent::getResponseAsJSON($model->getLogradouroByCep($cep));
+
+        } catch (Exception $e)
+        {
+            parent::getExceptionAsJSON($e);
+        }
     }
 
     public static function getCidadesByUf() : void
