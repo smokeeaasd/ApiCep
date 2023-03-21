@@ -3,6 +3,7 @@
 namespace ApiCep\Controller;
 
 use ApiCep\Model\EnderecoModel;
+use ApiCep\Model\CidadeModel;
 use App\Model;
 use Exception;
 
@@ -67,7 +68,19 @@ final class EnderecoController extends Controller
 
     public static function getCidadesByUf() : void
     {
+        try
+        {
+            $uf = $_GET['uf'];
 
+            $model = new CidadeModel();
+
+            $model->getCidadesByUf($uf);
+
+            parent::getExceptionAsJSON($model->rows);
+        } catch (Exception $e)
+        {
+            parent::getExceptionAsJSON($e);
+        }
     }
 
     public static function getBairrosByIdCidade() : void
