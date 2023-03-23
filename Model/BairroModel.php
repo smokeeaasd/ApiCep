@@ -4,5 +4,5 @@ namespace App\Model;
 
 abstract class Model
 {
-    public $rows;
+    public $id, $nome;
 }

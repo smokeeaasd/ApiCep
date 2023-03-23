@@ -1,5 +1,7 @@
 <?php
 
+namespace ApiCep\DAO;
+
 class EnderecoDAO extends DAO
 {
     public function __construct()
