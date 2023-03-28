@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Model;
+namespace ApiCep\Model;
 
 abstract class Model
 {

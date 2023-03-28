@@ -7,8 +7,9 @@ use ApiCep\Model\CidadeModel;
 
 use Exception;
 
-final class EnderecoController extends Controller
+class EnderecoController extends Controller
 {
+
     public static function getCepByLogradouro() : void
     {
         try

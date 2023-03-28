@@ -1,9 +1,7 @@
 <?php
 
 namespace ApiCep\Model;
-
 use ApiCep\DAO\EnderecoDAO;
-
 use Exception;
 
 class EnderecoModel extends Model
@@ -30,6 +28,8 @@ class EnderecoModel extends Model
             $dao = new EnderecoDAO();
             
             $this->rows = $dao->selectByCep($cep);
+
+            return $this->rows;
         } catch (Exception $e) {
             echo $e->getMessage();
         }
