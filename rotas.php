@@ -25,7 +25,7 @@ switch ($uri)
         EnderecoController::getCidadesByUf();
     break;
 
-    case "/bairro/id-cidade":
+    case "/bairro/by-cidade":
         EnderecoController::getBairrosByIdCidade();
     break;
 

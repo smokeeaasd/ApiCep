@@ -31,7 +31,7 @@ class EnderecoDAO extends DAO
 
         $endereco_obj = $stmt->fetchObject("ApiCep\Model\EnderecoModel");
 
-        $endereco_obj->arr_cidades = $this->selectCidadesByUf($endereco_obj->UF);
+        $endereco_obj->arr_cidades = $this->selectCidadesByUf($endereco_obj->uf);
 
         return $endereco_obj;
     }

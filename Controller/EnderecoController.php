@@ -77,7 +77,7 @@ class EnderecoController extends Controller
 
             $model->getCidadesByUf($uf);
 
-            parent::getExceptionAsJSON($model->rows);
+            parent::getResponseAsJSON($model->rows);
         } catch (Exception $e)
         {
             parent::getExceptionAsJSON($e);
